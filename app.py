@@ -12,6 +12,10 @@ def index():
 def math():
     return render_template('math.html')
 
+@app.route('/azulejos')
+def azulejos():
+    return render_template('azulejos.html')
+
 if __name__ == '__main__':
     app.run(port=5069, host='0.0.0.0') #Port sirve para cambiar manualmente el puerto que usa la app, default = 5000
                                         #host es para decirle a la app que se pueda acceder de cualquier direccion
