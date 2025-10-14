@@ -6,6 +6,7 @@ app = Flask(__name__)
 
 #Esta sera la ruta index (de la pagina principal)
 
+
 @app.route('/palindrome', methods=['GET', 'POST']) 
 def palindrome():
     

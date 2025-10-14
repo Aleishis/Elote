@@ -8,7 +8,8 @@ class Palindrome:
         
         p = self.phrase
         
-        frase = p.replace(' ', '')
+        frase = p.replace(' ', '').lower()
+        
         
         for i in range(len(frase)):
             
