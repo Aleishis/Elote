@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request
 from entities.palindrome import Palindrome
+from entities.money import Money
 
 
 app = Flask(__name__)
@@ -11,7 +12,7 @@ app = Flask(__name__)
 def palindrome():
     
     if request.method == 'POST':
-        phrase = request.form.get('input_phrase', '') #el punto get agarra el name del objeto html, no el id, e; segundo parametro es para decir que se hace si no se encuentra lo del primer parametro
+        phrase = request.form.get('input_phrase', '') #el punto get agarra el name del objeto html, no el id, el segundo parametro es para decir que se hace si no se encuentra lo del primer parametro
         
         p = Palindrome(phrase)
         
@@ -21,6 +22,21 @@ def palindrome():
         return render_template('result.html', resultado=resultado) #El segundo parametro es la funcion que esta esperando la vista renderizada
     return render_template('palindrome.html')
 
+@app.route('/money', methods=['GET', 'POST'])
+def money():
+    
+    if request.method == 'POST':
+        
+        cantidad = request.form.get('input_money', '')
+        
+        m = Money(cantidad)
+        
+        resultado = m.convertir()
+        
+        return render_template('result-money.html', resultado=resultado)
+    return render_template('money.html')
+    
+    
 @app.route('/')
 def index():
     return render_template('index.html')
