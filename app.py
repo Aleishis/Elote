@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request
 from entities.palindrome import Palindrome
 from entities.money import Money
+from entities.animal import Animal
 
 
 app = Flask(__name__)
@@ -48,6 +49,10 @@ def math():
 @app.route('/azulejos')
 def azulejos():
     return render_template('azulejos.html')
+
+@app.route('/animals')
+def animals():
+    return render_template('animals.html', animals=Animal.get_list())
 
 if __name__ == '__main__':
     app.run(port=5069, host='0.0.0.0') #Port sirve para cambiar manualmente el puerto que usa la app, default = 5000

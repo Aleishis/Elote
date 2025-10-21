@@ -1,17 +1,35 @@
-{% include 'header.html' %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Mi aplicacion web</title>
+        <link rel="stylesheet" href="{{url_for('static', filename='styles/styles.css')}}">
+        <!--<script src="/static/js/script.js" ></script> Este archivo js no se necesita en todas las paginas, entonces solo se pone en el archivo que lo usa--> 
+    </head>
+    <body>
+        <header>
+            <!-- a significa anchor(ancla) para hacer enlaces-->
+            <!-- nuevo comentario-->
+            <a href="{{url_for('index')}}">Inicio</a>
+            <a href="{{url_for('math')}}">Matematicas</a>
+            <a href="{{url_for('azulejos')}}">Azulejos</a>
+            <a href="{{url_for('palindrome')}}">Palindromo</a>
+            <a href="{{url_for('money')}}">Money</a>
+            <a href="{{url_for('animals')}}"></a>
+        </header>
 
     <main>
         <div>
+            <section id="contenedor">
 
             <form method="post" action="/money">
             <p>Ingresa la cantidad de dinero </p>
             <input id="input-money"class="input-welcome" name="input_money" type="number" placeholder="Escibe aqui...">
             <button type="submit" class="button-ok">Aceptar</button>
             </form>
+            </section>
 
         </div>
-            
+    
     </main>
 
-
-{% include 'footer.html '%}
+    {% include 'footer.html' %}

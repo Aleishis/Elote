@@ -1,0 +1,65 @@
+#contenedor{
+    background: white;
+    margin: 11% auto;
+    padding: 15px;
+    border-radius: 12px;
+    color: black;
+    width: 50%;
+    text-align: center;
+    box-shadow: 11px 20px 12px 1px #000000;
+    border: solid 5px darkblue;
+}
+
+
+header a{
+    font-weight: bold;
+    color: powderblue;
+    font-size: 200%;
+    text-decoration: none;
+    margin: 5px 10px;
+}
+
+footer{
+    
+    background-color: hotpink;
+    text-align: center;
+    color: white;
+    padding: 20px;
+    font-size: 200%;
+    font-weight: 800;
+}
+
+#contenedor input{
+    height: 40px;
+    width: 40%;
+    color: black;
+    padding: 2px;
+    margin: 5px;
+
+}
+
+#contenedor button{
+
+    height: 40px;
+    width: 40%;
+    color: powderblue;
+    background-color: darkblue;
+    font-weight: 700;
+    font-size: 18px;
+
+}
+
+#contenedor button:hover{
+    cursor: pointer;
+    color: darkblue;
+    background-color: powderblue;
+}
+
+#contenedor p{
+    font-size: 18px;
+    font-weight: bold;
+    color: darkgreen;
+    margin: 7px;
+    text-align: center;
+
+}
