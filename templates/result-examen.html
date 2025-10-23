@@ -1,0 +1,30 @@
+{%include 'header.html'%}
+
+{%for n in numeros%}
+<h1 style="font-weight: bold;
+color: darkblue;">{{n}}</h1>
+<br><br>
+{%endfor%}
+
+<br><br>
+<h1
+style="font-weight: bold;
+color: darkblue;
+font-size: 50px;">El numero ganador era</h1>
+<h1 style="font-weight: bold;
+color: darkblue;
+font-size: 50px;">{{numero_ganador}}</h1>
+<br><br>
+{%if result%}
+<h2 style="
+    font-size: 30px;
+    font-weight: bold;
+
+">GANASTEEEEEE</h2>
+{%else%}
+<h2
+style="
+       font-size: 30px;
+       font-weight: bold;"
+>PERDISTEEEEE</h2>
+{%endif%}

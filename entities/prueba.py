@@ -1,16 +1,11 @@
+import random
 
 
-condicion = True
-
-frase = input("Ingresa un palindromo: ").replace(" ", "")
-
-
-for i in range(len(frase)):
-            
-    if frase[i] != frase[len(frase) - i - 1]:
-        condicion = False
-    
-if condicion:
-    print("Si es palindromo")
-else:
-    print("No es un palindromo")
+numeros = [1,2,3]
+numeros_ganadores = []
+for i in range(3):
+    numeros_ganadores.append(random.randint(1,101))
+        
+    if numeros[i] == numeros_ganadores[i]:
+        print('si')
+    print('no')

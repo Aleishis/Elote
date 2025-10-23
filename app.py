@@ -2,6 +2,7 @@ from flask import Flask, render_template, request
 from entities.palindrome import Palindrome
 from entities.money import Money
 from entities.animal import Animal
+from entities.rifa import Rifa
 
 
 app = Flask(__name__)
@@ -53,6 +54,24 @@ def azulejos():
 @app.route('/animals')
 def animals():
     return render_template('animals.html', animals=Animal.get_list())
+
+@app.route('/examen',methods=['GET', 'POST'])
+def examen():
+    if request.method == 'POST':
+        numeros = []
+    
+        numeros.append(request.form.get('input_number1'))
+        numeros.append(request.form.get('input_number2'))
+        numeros.append(request.form.get('input_number3'))
+
+        n = Rifa(numeros)
+        
+        result = n.sortear()[0]
+        numero_ganador = n.sortear()[1]
+        
+        return render_template('result-examen.html', result=result, numeros = numeros, numero_ganador=numero_ganador)
+        
+    return render_template('examen.html')
 
 if __name__ == '__main__':
     app.run(port=5069, host='0.0.0.0') #Port sirve para cambiar manualmente el puerto que usa la app, default = 5000
