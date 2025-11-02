@@ -1,10 +1,44 @@
 {% include 'header.html' %}
+<style>
+
+    #contenedor > div{
+        grid-template-columns: 50% 50%;
+        text-align: center;
+        background-color: white;
+        border: solid darkblue;
+        border-radius: 5px;
+        
+    }
+
+    #contenedor button{
+        margin: 50% auto;
+        border: darkblue;
+        font-size: 18px;
+        height: 24px;
+        width: 40%;
+        color: darkblue;
+        background-color: powderblue;
+        border-radius: 5px;
+    }
+
+</style>
 
         <main>
+            <form action="/examen" method="post">
+            <section id="contenedor">
+                <div>
+                    <h1>Escribe tus tres numeros</h1>
+                    <input type="number" name="input_number1" placeholder="Escribelo aqui...">
+                    <input type="number" name="input_number2" placeholder="Escribelo aqui...">
+                    <input type="number" name="input_number3" placeholder="Escribelo aqui...">
+                </div>
+                <div>
+                    <button>Aceptar</button>
+                </div>
 
-            <h1>Resultado</h1>
-             
-            {{resultado}}
+
+            </section>
+            </form>
             
 
         </main>
